@@ -19,6 +19,7 @@ const Tab = createBottomTabNavigator();
 
 const Stack = createNativeStackNavigator();
 
+/* Digunakan untuk kumpulan menu pindah halaman secara langsung tanpa tab dan drawer */
 function DetailStack() {
   return (
     <Stack.Navigator>
@@ -36,6 +37,7 @@ function DetailStack() {
   );
 }
 
+/* Digunakan untuk kumpulan menu tab navigasi */
 function MyTabs() {
   return (
     <Tab.Navigator screenOptions={{ headerShown: false,}}>
@@ -45,6 +47,7 @@ function MyTabs() {
   );
 }
 
+/* Digunakan untuk kumpulan menu di sidebar(drawer) */
 function MyDrawer() {
   return (
     /* <NavigationContainer>
@@ -56,12 +59,15 @@ function MyDrawer() {
     </NavigationContainer> */
       <Drawer.Navigator>
         <Drawer.Screen name="empat" component={empat} screenOptions={{headerShown: false}} />
-        <Drawer.Screen name="lima" component={MyTabs} screenOptions={{headerShown: false}} />
+        <Drawer.Screen name="lima" component={MyTabs} screenOptions={{headerShown: false}} /> {/* Pada Navigasi ini menampilkan menu TAB */}
         
       </Drawer.Navigator>
   );
 }
 
+/* Digunakan untuk main
+    Dimana ketika di akses akan mendapatkan menu sidebar dan juga menu stack
+ */
 function RootNavigator() {
   return (
     <NavigationContainer>
