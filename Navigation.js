@@ -28,11 +28,6 @@ function DetailStack() {
         component={DetailPage}
         options={{ headerShown: true }}
       />
-      <Stack.Screen
-        name="SubDetailPage1"
-        component={SubDetailPage1}
-        options={{ headerShown: false }}
-      />
     </Stack.Navigator>
   );
 }
@@ -50,18 +45,23 @@ function MyTabs() {
 /* Digunakan untuk kumpulan menu di sidebar(drawer) */
 function MyDrawer() {
   return (
-    /* <NavigationContainer>
+    /*
+    <NavigationContainer>
       <Drawer.Navigator>
         <Drawer.Screen name="empat" component={empat} screenOptions={{headerShown: false}} />
         <Drawer.Screen name="lima" component={MyTabs} screenOptions={{headerShown: false}} />
         
       </Drawer.Navigator>
     </NavigationContainer> */
+    
+    
       <Drawer.Navigator>
         <Drawer.Screen name="empat" component={empat} screenOptions={{headerShown: false}} />
-        <Drawer.Screen name="lima" component={MyTabs} screenOptions={{headerShown: false}} /> {/* Pada Navigasi ini menampilkan menu TAB */}
+        <Drawer.Screen name="lima" component={MyTabs} screenOptions={{headerShown: false}} /> 
         
       </Drawer.Navigator>
+      
+
   );
 }
 
